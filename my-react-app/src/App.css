@@ -5,21 +5,19 @@
   text-align: center;
 }
 
-.message-container {
-  width: 900px;
-  margin: 0 auto;
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  background-color: #f9f9f9;
-  height: 80vh;
-  overflow-y: auto;
+.input-filter {
+  width: 80%;
+  height: 30px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  padding: 5px 10px;
+  margin: 20px auto;
+  font-size: 16px;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
 }
 
-.message-bubble {
-  padding: 10px;
-  margin: 10px 0;
-  border-radius: 5px;
-  background-color: #ddd;
-  cursor: pointer;
+.input-filter:focus {
+  outline: none;
+  border-color: #6e9cf2;
+  box-shadow: 0 0 10px #6e9cf2;
 }
