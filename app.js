@@ -21,20 +21,14 @@ const wss = new WebSocket.Server({ server })
 
 app.post('/message', express.json(), (req, res) => {
   const message = req.body
+  console.log(message)
   wss.clients.forEach((client) => {
     if (client.readyState === WebSocket.OPEN) {
-      // random from 1 to 1000
-      const random1 = Math.floor(Math.random() * 1000) + 1
-      const random2 = Math.floor(Math.random() * 1000) + 1
-      const random3 = Math.floor(Math.random() * 1000) + 1
-
       const myId = uuidv4()
 
       client.send(
         JSON.stringify({
-          event: `Random ${random1}`,
-          randomData: random2,
-          randomDataTwo: random3,
+          ...message,
           myId
         })
       )
