@@ -11,12 +11,17 @@ function App() {
   useEffect(() => {
     // const ws = new WebSocket('ws://localhost:3001')
     const ws = new WebSocket('wss://segment-qa.onrender.com')
+    console.log('ws', ws)
+    console.log('connected!')
     ws.onmessage = (message) => {
       setMessages((prevMessages) => [...prevMessages, message.data])
     }
 
     // Clean up the effect by closing the WebSocket connection when the component unmounts
-    return () => ws.close()
+    return () => {
+      console.log('disconnected!')
+      ws.close()
+    }
   }, [])
 
   return (
