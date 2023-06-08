@@ -9,8 +9,8 @@ function App() {
   const [info, setInfo] = useState({})
 
   useEffect(() => {
-    const ws = new WebSocket('ws://localhost:3001')
-    // const ws = new WebSocket('wss://segment-qa.onrender.com')
+    // const ws = new WebSocket('ws://localhost:3001')
+    const ws = new WebSocket('wss://segment-qa.onrender.com')
     ws.onmessage = (message) => {
       setMessages((prevMessages) => [...prevMessages, message.data])
     }
